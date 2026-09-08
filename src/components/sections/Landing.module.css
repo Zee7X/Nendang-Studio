@@ -96,38 +96,126 @@
 .faqArt > p { position: relative; padding: 24px 30px; border-radius: 22px; background: #f7f7fc; color: #080a0f; font-size: clamp(20px, 1.8vw, 28px); line-height: 1.25; text-align: center; text-shadow: none; transform: rotate(-4deg); box-shadow: 0 8px 28px #0007; }
 .faqArt > p::after { content: ""; position: absolute; right: 16%; bottom: -8px; width: 18px; height: 18px; background: #f7f7fc; clip-path: polygon(0 0, 100% 0, 55% 100%); }
 
-.why { position: relative; isolation: isolate; background: linear-gradient(180deg, #080d10, transparent 20%, transparent 80%, #080d10), linear-gradient(90deg, #080d10e8, #080d1050 30%, #080d1050 70%, #080d10e8), url('/assets/backgrounds/bg-why.webp') center / cover; padding: 100px 5%; overflow: hidden; }
-.whyInner { position: relative; z-index: 2; display: grid; grid-template-columns: 30% minmax(0, 1fr); gap: 4%; align-items: stretch; max-width: 1680px; margin-inline: auto; }
-.whyIntro { position: relative; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; }
-.whyHeading { position: relative; z-index: 2; margin-top: 10px; font-size: clamp(34px, 3.1vw, 50px); line-height: 1.12; letter-spacing: -.015em; font-weight: 750; text-shadow: 0 3px 6px #0007; }
-.whyCrown { width: clamp(34px, 3vw, 52px); height: auto; margin-left: 10px; translate: 0 -10%; }
-.whyAccent { position: relative; display: inline-block; color: #c8ff42; }
-.whyUnderlineWrap { position: relative; display: inline-block; }
-.whyUnderline { position: absolute; left: 2%; bottom: -12px; width: 96%; height: auto; }
-.whyDescription { position: relative; z-index: 2; max-width: 380px; margin-top: 22px; font-size: 17px; line-height: 1.65; color: #e4e8ef; }
-.whyCharacter { position: absolute; z-index: 1; right: -4%; bottom: -14%; width: 52%; max-width: 320px; height: auto; filter: drop-shadow(0 14px 30px #0009); }
-.whyGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.whyItem { position: relative; padding: 36px 32px 40px; }
-.whyItem:nth-child(odd) { border-right: 1px solid #ff3cac38; }
-.whyItem:nth-child(-n+2) { border-bottom: 1px solid #ff3cac38; }
-.whyNumber { width: clamp(150px, 13vw, 210px); height: auto; margin-bottom: 20px; }
-.whyItem h3 { font-size: clamp(19px, 1.5vw, 24px); font-weight: 750; letter-spacing: -.01em; }
-.whyItem p { margin-top: 10px; font-size: 16px; line-height: 1.55; color: #cdd3dc; }
+/* Why Nendang Section */
+.whySection {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, #080a0f 0%, transparent 12%, transparent 88%, #080a0f 100%),
+    url('/assets/backgrounds/bg-why.webp') center / cover no-repeat;
+  padding: 100px clamp(24px, 7.5vw, 130px);
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.whyInner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 38% minmax(0, 1fr);
+  gap: 6%;
+  align-items: center;
+  max-width: 1440px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.whyIntro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.whyCharacterWrap {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 24px;
+}
+
+.whyCharacter {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.whyCharacterWrap:hover .whyCharacter {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  z-index: 2;
+}
+
+.whyItem {
+  position: relative;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.whyItem:nth-child(odd) {
+  border-right: 1px solid rgba(255, 60, 172, 0.22);
+}
+
+.whyItem:nth-child(-n+2) {
+  border-bottom: 1px solid rgba(255, 60, 172, 0.22);
+}
+
+.whyNumber {
+  height: clamp(65px, 5.5vw, 88px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease;
+}
+
+.whyItem:hover .whyNumber {
+  transform: scale(1.05);
+}
+
+.whyItem h3 {
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.whyItem p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cdd3dc;
+}
 
 @media (max-width: 1239px) {
-  .why { padding: 80px 6%; }
-  .whyInner { grid-template-columns: minmax(0, 1fr); gap: 56px; }
-  .whyCharacter { position: static; width: 240px; margin-top: 28px; }
-  .whyDescription { max-width: 560px; }
-  .whyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .whySection { padding: 80px 6%; }
+  .whyInner { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .whyCharacterWrap { max-width: 300px; margin-top: 20px; }
 }
+
 @media (max-width: 699px) {
-  .why { padding: 64px 24px; }
+  .whySection { padding: 64px 20px; }
   .whyGrid { grid-template-columns: minmax(0, 1fr); }
-  .whyItem { padding: 32px 20px; }
-  .whyItem:nth-child(odd) { border-right: 0; }
-  .whyItem:nth-child(n) { border-bottom: 1px solid #ff3cac38; }
-  .whyItem:last-child { border-bottom: 0; }
+  .whyItem { padding: 28px 16px; }
+  .whyItem:nth-child(odd) { border-right: none; }
+  .whyItem:nth-child(n) { border-bottom: 1px solid rgba(255, 60, 172, 0.22); }
+  .whyItem:last-child { border-bottom: none; }
+  .whyNumber { height: 58px; margin-bottom: 16px; }
+  .whyCharacterWrap { max-width: 220px; }
 }
 
 .ctaSection { position: relative; background: linear-gradient(180deg, #39204f, #271d39 40%, #221a31), url('/assets/backgrounds/bg-footer.webp') center / cover; padding: 40px 24px 0; }.ctaBanner { position: relative; display: grid; grid-template-columns: 23% 29% minmax(0,1fr) 10%; align-items: center; gap: 24px; width: 100%; max-width: 1632px; margin-inline: auto; padding: 0 24px 0; border: 1px solid #a05bf0; border-radius: 15px; background: linear-gradient(115deg, #51228d, #48257a); overflow: hidden; }
