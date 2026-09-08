@@ -99,23 +99,19 @@
 .why { position: relative; isolation: isolate; background: linear-gradient(180deg, #080d10, transparent 20%, transparent 80%, #080d10), linear-gradient(90deg, #080d10e8, #080d1050 30%, #080d1050 70%, #080d10e8), url('/assets/backgrounds/bg-why.webp') center / cover; padding: 100px 5%; overflow: hidden; }
 .whyInner { position: relative; z-index: 2; display: grid; grid-template-columns: 30% minmax(0, 1fr); gap: 4%; align-items: stretch; max-width: 1680px; margin-inline: auto; }
 .whyIntro { position: relative; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; }
-.whyHeading { position: relative; z-index: 2; margin-top: 18px; font-size: clamp(48px, 5.2vw, 86px); line-height: .95; font-weight: 800; letter-spacing: -.02em; text-transform: uppercase; text-shadow: 0 3px 6px #0007; }
-.whyAccent { color: transparent; -webkit-text-stroke: 2.5px #c8ff42; }
-.whyMark { color: #ff3cac; }
+.whyHeading { position: relative; z-index: 2; margin-top: 10px; font-size: clamp(34px, 3.1vw, 50px); line-height: 1.12; letter-spacing: -.015em; font-weight: 750; text-shadow: 0 3px 6px #0007; }
+.whyCrown { width: clamp(34px, 3vw, 52px); height: auto; margin-left: 10px; translate: 0 -10%; }
+.whyAccent { position: relative; display: inline-block; color: #c8ff42; }
+.whyUnderlineWrap { position: relative; display: inline-block; }
+.whyUnderline { position: absolute; left: 2%; bottom: -12px; width: 96%; height: auto; }
 .whyDescription { position: relative; z-index: 2; max-width: 380px; margin-top: 22px; font-size: 17px; line-height: 1.65; color: #e4e8ef; }
 .whyCharacter { position: absolute; z-index: 1; right: -4%; bottom: -14%; width: 52%; max-width: 320px; height: auto; filter: drop-shadow(0 14px 30px #0009); }
 .whyGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .whyItem { position: relative; padding: 36px 32px 40px; }
 .whyItem:nth-child(odd) { border-right: 1px solid #ff3cac38; }
 .whyItem:nth-child(-n+2) { border-bottom: 1px solid #ff3cac38; }
-.whyNumberRow { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-.whyNumber { font-size: clamp(72px, 6.5vw, 108px); line-height: .85; font-weight: 800; letter-spacing: -.02em; }
-.whyItem:nth-child(1) .whyNumber { color: transparent; -webkit-text-stroke: 2.5px #c8ff42; }
-.whyItem:nth-child(2) .whyNumber { color: transparent; -webkit-text-stroke: 2.5px #ff3cac; }
-.whyItem:nth-child(3) .whyNumber { color: transparent; -webkit-text-stroke: 2.5px #1ce4ee; }
-.whyItem:nth-child(4) .whyNumber { color: transparent; -webkit-text-stroke: 2.5px #b28cff; }
-.whyIcon { width: clamp(44px, 3.4vw, 58px); height: auto; filter: drop-shadow(0 0 12px #ffffff2e); }
-.whyItem h3 { font-size: clamp(19px, 1.5vw, 24px); font-weight: 750; letter-spacing: -.01em; text-transform: uppercase; }
+.whyNumber { width: clamp(150px, 13vw, 210px); height: auto; margin-bottom: 20px; }
+.whyItem h3 { font-size: clamp(19px, 1.5vw, 24px); font-weight: 750; letter-spacing: -.01em; }
 .whyItem p { margin-top: 10px; font-size: 16px; line-height: 1.55; color: #cdd3dc; }
 
 @media (max-width: 1239px) {

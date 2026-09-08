@@ -3,10 +3,10 @@ import Reveal from "@/components/ui/Reveal";
 import s from "./Landing.module.css";
 
 const values = [
-  { number: "01", title: "Custom Design", description: "No boring templates.", icon: "/assets/doodles/splash-pink.svg", alt: "" },
-  { number: "02", title: "Fast & Responsive", description: "Built for real users.", icon: "/assets/doodles/star-01.svg", alt: "" },
-  { number: "03", title: "Direct Communication", description: "Ngobrol langsung sama yang ngerjain.", icon: "/assets/doodles/arrow-cyan.svg", alt: "" },
-  { number: "04", title: "After-Launch Support", description: "Nggak ditinggal setelah live.", icon: "/assets/doodles/crown-pink.svg", alt: "" },
+  { img: "/assets/why/value-01.png", width: 590, height: 350, title: "Custom Design", description: "No boring templates." },
+  { img: "/assets/why/value-02.png", width: 610, height: 280, title: "Fast & Responsive", description: "Built for real users." },
+  { img: "/assets/why/value-03.png", width: 544, height: 296, title: "Direct Communication", description: "Ngobrol langsung sama yang ngerjain." },
+  { img: "/assets/why/value-04.png", width: 576, height: 310, title: "After-Launch Support", description: "Nggak ditinggal setelah live." },
 ];
 
 export default function WhyNendang() {
@@ -17,9 +17,13 @@ export default function WhyNendang() {
           <div className={s.whyIntro}>
             <p className={s.eyebrow}><span aria-hidden="true">→</span> Why Nendang?</p>
             <h2 id="why-title" className={s.whyHeading}>
-              KENAPA<br />
-              <span className={s.whyAccent}>NENDANG</span>
-              <span className={s.whyMark}>?</span>
+              Why
+              <Image className={s.whyCrown} src="/assets/doodles/crown-pink.svg" alt="" width={120} height={100} aria-hidden="true" />
+              <br />
+              <span className={s.whyUnderlineWrap}>
+                <span className={s.whyAccent}>Nendang?</span>
+                <Image className={s.whyUnderline} src="/assets/doodles/underline-pink.svg" alt="" width={600} height={90} aria-hidden="true" />
+              </span>
             </h2>
             <p className={s.whyDescription}>
               Bukan cuma desain keren — website kamu juga harus enak dipakai, cepat, dan jelas prosesnya.
@@ -28,12 +32,10 @@ export default function WhyNendang() {
               sizes="(max-width: 999px) 55vw, 28vw" />
           </div>
           <ul className={s.whyGrid}>
-            {values.map(({ number, title, description, icon }) => (
-              <li key={number} className={s.whyItem}>
-                <div className={s.whyNumberRow}>
-                  <span className={s.whyNumber} aria-hidden="true">{number}</span>
-                  <Image className={s.whyIcon} src={icon} alt="" width={72} height={72} aria-hidden="true" />
-                </div>
+            {values.map(({ img, width, height, title, description }) => (
+              <li key={title} className={s.whyItem}>
+                <Image src={img} alt="" width={width} height={height} aria-hidden="true"
+                  className={s.whyNumber} sizes="(max-width: 699px) 55vw, (max-width: 1239px) 40vw, 20vw" />
                 <h3>{title}</h3>
                 <p>{description}</p>
               </li>
