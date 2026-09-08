@@ -2,6 +2,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Portfolio from "@/components/sections/Portfolio";
+import WhyNendang from "@/components/sections/WhyNendang";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -19,6 +20,7 @@ export default function Home() {
         <Reveal>
           <Portfolio />
         </Reveal>
+        <WhyNendang />
         <Reveal>
           <Pricing />
         </Reveal>

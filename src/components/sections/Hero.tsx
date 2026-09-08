@@ -17,7 +17,7 @@ export default function Hero() {
               preload sizes="(min-width: 900px) 28vw, 46vw" />
           </div>
           <div className={styles.characterGroup}>
-            <p className={styles.ideaSign}>IDE<br />WEBSITE<br />JADI REALITA!</p>
+            <p className={styles.ideaSign}>PUNYA IDE?<br />KITA BIKIN<br />NENDANG!</p>
             <p className={styles.rightSign}>BUILD<br />CREATE<br />GROW<br />TOGETHER :)</p>
             <Image src="/assets/characters/hero-right.webp" alt="" width={640} height={898}
               preload sizes="(min-width: 900px) 28vw, 46vw" />
