@@ -1,0 +1,126 @@
+.hero { position: relative; isolation: isolate; background: #080d10; }
+.stage {
+  position: relative;
+  container-type: inline-size;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 100%;
+  min-height: max(820px, 100svh);
+  padding: 120px 4vw 32px;
+  background: linear-gradient(0deg, #080d10, transparent 20%), linear-gradient(#080b0d33, #080b0d33), url('/assets/backgrounds/bg-hero.webp') center / cover;
+}
+.artwork { position: absolute; inset: 120px 0 150px; display: grid; grid-template-columns: 28% 28%; justify-content: space-between; pointer-events: none; user-select: none; }
+.characterGroup { position: relative; display: flex; flex-direction: column; align-items: center; gap: 24px; min-height: 0; min-width: 0; padding-inline: 16px; }
+.artwork img { min-height: 0; width: 100%; height: auto; flex: 1; object-fit: contain; object-position: bottom; }
+.leftSign, .ideaSign, .rightSign { font-family: var(--font-kalam), cursive; line-height: 1.2; text-align: center; text-shadow: 0 3px 3px #000, 0 0 18px #080d10; }
+.leftSign { align-self: flex-start; margin: 8px 0 0 2%; flex-shrink: 0; color: #f0dcff; font-size: clamp(23px, 2vw, 34px); transform: rotate(-8deg); }
+.ideaSign { position: absolute; z-index: 2; top: -4px; left: -14%; padding: 12px 20px; flex-shrink: 0; font-size: clamp(20px, 1.6vw, 28px); border: 2px solid #ececf0; border-radius: 48% 43% 40% 47%; background: #0d1116; }
+.ideaSign::after { content: ""; position: absolute; right: 14%; bottom: -10px; width: 14px; height: 14px; background: #0d1116; border-right: 2px solid #ececf0; border-bottom: 2px solid #ececf0; transform: rotate(45deg); }
+.rightSign { position: absolute; z-index: 2; top: 43%; right: 0; width: max-content; line-height: 1.2; text-align: left; color: #e0ff72; font-size: clamp(15px, 1.5vw, 24px); transform: rotate(3deg); }
+@media (min-width: 900px) {
+  .characterGroup:last-child img { width: 80%; margin-right: auto; }
+}
+.copy { position: relative; z-index: 3; align-self: center; width: 40%; margin: 0 0 36px 33%; }
+.eyebrow { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #ff8ad3; }
+.title { margin-top: 16px; font-size: clamp(40px, 4.1vw, 70px); line-height: 1.08; font-weight: 800; letter-spacing: -.025em; }
+.title span { white-space: nowrap; color: #c8ff42; }
+.description { margin-top: 30px; font-size: clamp(16px, 1.15vw, 19px); line-height: 1.6; color: #e4e7ec; }
+@media (max-width: 1449px) { .descBr { display: none; } }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.primaryButton, .outlineButton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 30px; border-radius: 999px; font-size: 16px; font-weight: 750; white-space: nowrap; transition: background-color .2s, border-color .2s; }
+.primaryButton { color: #080a0f; background: #ff3cac; border: 2px solid #ff3cac; }
+.primaryButton:hover { background: #ff75c4; border-color: #ff75c4; }
+.outlineButton { border: 2px solid #8793a3; color: #f4f6fb; background: #080b0de0; }
+.outlineButton:hover { background: #20262d; border-color: #f4f6fb; }
+.features { position: relative; z-index: 4; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; width: 100%; max-width: 1600px; margin-inline: auto; padding: 28px 32px; border: 1px solid #39424c; border-radius: 24px; background: #141b20; box-shadow: 0 10px 25px #0004; }
+.feature { display: flex; align-items: center; gap: 20px; }
+.featureIcon { width: 36px; height: 36px; flex-shrink: 0; color: #1ce4ee; }
+.feature:last-child .featureIcon { color: #f3e637; }
+.feature:first-child .featureIcon { fill: currentColor; }
+.feature h2 { font-size: 17px; font-weight: 750; line-height: 1.4; }
+.feature p { margin-top: 5px; font-size: 14px; line-height: 1.5; color: #cbd2de; }
+.header { position: absolute; z-index: 10; top: 0; left: 0; right: 0; }
+.nav { display: flex; align-items: center; justify-content: space-between; width: 86%; max-width: 1600px; margin-inline: auto; height: 96px; gap: 24px; }
+.navLogo { font-size: 24px; white-space: nowrap; }
+.navLogo img { width: 36px; height: 36px; }
+.navLinks { display: flex; align-items: center; gap: 32px; }
+.navLinks a { display: inline-flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 600; transition: color .2s; }
+.navLinks a:hover { color: #ff8ad3; }
+.navCta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 10px 24px; border: 2px solid #ff3cac; border-radius: 999px; font-size: 15px; font-weight: 750; color: #ff8ad3; white-space: nowrap; transition: background-color .2s; }
+.navCta:hover { background: #ff3cac20; }
+.menuButton, .mobileMenu { display: none; }
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .nav { width: 92%; gap: 16px; }
+  .navLogo { font-size: 20px; }
+  .navLinks { gap: 20px; }
+  .navLinks a, .navCta { font-size: 14px; }
+  .navCta { padding-inline: 16px; }
+  .copy { width: 42%; margin-left: 32%; }
+  .title { font-size: 3.8vw; }
+  .artwork { grid-template-columns: 27% 27%; }
+  .leftSign { font-size: 23px; }
+  .ideaSign { font-size: 20px; padding-inline: 12px; left: -12%; }
+  .rightSign { font-size: 18px; }
+  .features { gap: 18px; padding: 24px; }
+  .feature { align-items: flex-start; gap: 12px; }
+  .feature h2 { font-size: 16px; }
+}
+@media (max-width: 899px) {
+  .stage { display: flex; flex-direction: column; min-height: 100svh; padding: 0 0 32px; background-position: center top; }
+  .nav { width: auto; height: 80px; margin-inline: 24px; }
+  .navLogo { font-size: 21px; }
+  .navLogo img { width: 32px; height: 32px; }
+  .navLinks, .navCta { display: none; }
+  .menuButton { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #536170; border-radius: 10px; background: #141b20; }
+  .mobileMenu { display: grid; gap: 4px; margin: 0 20px; padding: 12px; background: #10151cf5; border: 1px solid #39424c; border-radius: 12px; }
+  .mobileMenu[hidden] { display: none; }
+  .mobileMenu a { padding: 12px; min-height: 44px; border-radius: 8px; font-size: 16px; }
+  .mobileMenu a:hover { background: #ffffff10; }
+  .mobileMenu a:last-child { text-align: center; background: #ff3cac; color: #080b0d; font-weight: 750; }
+  .copy { width: min(560px, calc(100% - 48px)); margin: 0 auto; padding-top: 120px; }
+  .eyebrow { font-size: 15px; }
+  .title { font-size: clamp(33px, 6.5vw, 52px); }
+  .description { font-size: 17px; }
+  .artwork { position: relative; inset: auto; order: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: min(640px, calc(100% - 40px)); margin: 40px auto 24px; }
+  .characterGroup { justify-content: flex-end; gap: 24px; padding: 0; }
+  .artwork img { flex: none; height: 280px; }
+  .leftSign { margin: 0; font-size: 23px; transform: none; }
+  .ideaSign { position: static; align-self: center; font-size: 21px; padding: 12px; }
+  .ideaSign::after { display: none; }
+  .rightSign { display: none; }
+  .features { order: 2; width: calc(100% - 40px); margin-top: -12px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 24px; gap: 24px; }
+  .feature { align-items: flex-start; gap: 12px; }
+  .featureIcon { width: 28px; height: 28px; }
+  .feature h2 { font-size: 16px; }
+}
+@media (max-width: 479px) {
+  .nav { margin-inline: 20px; }
+  .navLogo { font-size: 18px; }
+  .copy { width: calc(100% - 40px); padding-top: 110px; }
+  .title { font-size: clamp(28px, 8.5vw, 40px); }
+  .description { font-size: 16px; }
+  .actions { flex-direction: column; gap: 12px; }
+  .artwork img { height: 210px; }
+  .leftSign, .ideaSign { font-size: 18px; }
+  .ideaSign { padding: 12px 6px; }
+  .features { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 24px; }
+  .feature { gap: 18px; }
+  .featureIcon { width: 32px; height: 32px; }
+}
+
+@keyframes enter {
+  from { opacity: 0; translate: 0 20px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .copy > * { animation: enter .65s cubic-bezier(.2,.7,.2,1) both; }
+  .title { animation-delay: .08s; }
+  .description { animation-delay: .16s; }
+  .actions { animation-delay: .24s; }
+  .characterGroup, .features { animation: enter .8s .15s cubic-bezier(.2,.7,.2,1) both; }
+  .primaryButton, .outlineButton, .navCta { transition: translate .2s, box-shadow .2s, background-color .2s; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .primaryButton:hover, .outlineButton:hover, .navCta:hover { translate: 0 -3px; box-shadow: 0 8px 28px #ff3cac25; }
+}
